@@ -48,7 +48,7 @@ function Footer({ destinations }) {
           <h4>Company</h4>
           <ul>
             <li>Bosan Road,Gulghast, Multan</li>
-            <li>hello@safarnama.pk</li>
+            <li>hello@wanderworld.pk</li>
             <li>+92 326 7287001</li>
           </ul>
         </div>

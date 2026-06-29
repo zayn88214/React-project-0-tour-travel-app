@@ -22,7 +22,7 @@ function Contact() {
               <FaPhoneAlt /> +92 326 7287001
             </li>
             <li>
-              <FaEnvelope /> hello@safarnama.pk
+              <FaEnvelope /> hello@wanderworld.pk
             </li>
           </ul>
         </div>

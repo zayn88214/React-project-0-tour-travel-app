@@ -8,7 +8,7 @@ const testimonials = [
     country: 'Lahore, Pakistan',
     avatar: 'https://i.pravatar.cc/100?img=47',
     review:
-      'Safarnama planned every detail of our Hunza trip. The itinerary felt personal, not like a copy-paste package.',
+      'WanderWorld planned every detail of our Hunza trip. The itinerary felt personal, not like a copy-paste package.',
     stars: 5,
   },
   {

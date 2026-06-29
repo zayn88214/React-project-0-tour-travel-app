@@ -15,7 +15,7 @@ function Hero() {
           One valley at a time.
         </h1>
         <p className="hero__text">
-          Safarnama designs slow, well-paced trips across the north and beyond —
+          WanderWorld designs slow, well-paced trips across the north and beyond —
           planned by people who have actually driven these roads.
         </p>
         <div className="hero__actions">
