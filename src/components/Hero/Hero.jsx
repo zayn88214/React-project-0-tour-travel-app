@@ -2,8 +2,8 @@ import React from 'react';
 import { FaArrowRight, FaPlay } from 'react-icons/fa';
 import './Hero.css';
 
-// Hero — static content section, no props needed.
-function Hero() {
+// Hero — receives scroll callbacks from App.
+function Hero({ onBookTrip, onExplore }) {
   return (
     <section id="home" className="hero">
       <div className="hero__overlay" />
@@ -19,10 +19,10 @@ function Hero() {
           planned by people who have actually driven these roads.
         </p>
         <div className="hero__actions">
-          <button className="btn btn-primary">
+          <button className="btn btn-primary" onClick={onBookTrip}>
             Book Trip <FaArrowRight />
           </button>
-          <button className="btn btn-ghost">
+          <button className="btn btn-ghost" onClick={onExplore}>
             <FaPlay /> Explore Destinations
           </button>
         </div>

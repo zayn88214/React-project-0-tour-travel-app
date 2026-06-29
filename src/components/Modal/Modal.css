@@ -1,0 +1,296 @@
+/* ================================================
+   Modal — full-screen overlay with animated panel
+================================================ */
+
+.modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 42, 59, 0.72);
+  backdrop-filter: blur(6px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: backdropIn 0.25s ease;
+}
+
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal__panel {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 32px 64px rgba(14, 42, 59, 0.28);
+  animation: panelIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  scroll-behavior: smooth;
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)  scale(1); }
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.75rem 1rem;
+  border-bottom: 1px solid var(--sand-dark);
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  z-index: 1;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.modal__title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--ink);
+  margin: 0;
+}
+
+.modal__close {
+  background: var(--sand);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.modal__close:hover {
+  background: var(--sand-dark);
+  transform: rotate(90deg);
+}
+
+.modal__body {
+  padding: 1.75rem;
+}
+
+/* ---- Destination Detail inside modal ---- */
+.dest-detail__hero {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 240px;
+  margin-bottom: 1.4rem;
+}
+
+.dest-detail__hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dest-detail__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.dest-detail__country {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sunset);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.dest-detail__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(14, 42, 59, 0.07);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.dest-detail__rating svg {
+  color: #ffc94a;
+}
+
+.dest-detail__city {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  color: var(--ink);
+  margin: 0 0 0.75rem;
+}
+
+.dest-detail__desc {
+  color: #5a6e7a;
+  line-height: 1.7;
+  font-size: 0.97rem;
+  margin-bottom: 1.5rem;
+}
+
+.dest-detail__price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.2rem;
+  border-top: 1px dashed var(--sand-dark);
+}
+
+.dest-detail__price-label {
+  font-size: 0.82rem;
+  color: #7a8e9a;
+  margin-bottom: 0.2rem;
+}
+
+.dest-detail__price-value {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--ocean);
+}
+
+/* ---- Booking Form inside modal ---- */
+.book-form__subtitle {
+  color: #5a6e7a;
+  font-size: 0.95rem;
+  margin-bottom: 1.4rem;
+}
+
+.book-form__pkg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--sky-light);
+  color: var(--ocean);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1.4rem;
+}
+
+.book-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.book-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.book-form__field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.book-form__field input,
+.book-form__field select,
+.book-form__field textarea {
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--sand-dark);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--ink);
+  background: var(--sand);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  width: 100%;
+}
+
+.book-form__field input:focus,
+.book-form__field select:focus,
+.book-form__field textarea:focus {
+  border-color: var(--ocean);
+  box-shadow: 0 0 0 3px rgba(17, 87, 126, 0.12);
+  background: var(--white);
+}
+
+.book-form__actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.book-form__cancel {
+  background: var(--sand);
+  color: var(--ink);
+  border: none;
+  padding: 0.85rem 1.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.book-form__cancel:hover {
+  background: var(--sand-dark);
+}
+
+/* Success state */
+.book-form__success {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.book-form__success-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--ocean), var(--sky));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  font-size: 1.6rem;
+  color: white;
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+.book-form__success h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.book-form__success p {
+  color: #5a6e7a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 560px) {
+  .book-form__row {
+    grid-template-columns: 1fr;
+  }
+  .modal__panel {
+    border-radius: var(--radius-md);
+  }
+  .dest-detail__hero {
+    height: 180px;
+  }
+}

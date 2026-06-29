@@ -2,5 +2,10 @@
    owns its own CSS file. This file only holds page-wide overrides. */
 
 #root {
+  /* removed overflow-x to allow position: sticky on children */
+}
+
+body {
   overflow-x: hidden;
 }
+

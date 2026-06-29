@@ -4,7 +4,7 @@ import './Packages.css';
 
 // Packages — receives the packages array as a prop from App
 // and drills a single package object down into each PackageCard.
-function Packages({ packages }) {
+function Packages({ packages, onBookNow }) {
   return (
     <section id="packages" className="packages">
       <div className="container">
@@ -16,7 +16,7 @@ function Packages({ packages }) {
 
         <div className="packages__grid">
           {packages.map((pkg) => (
-            <PackageCard key={pkg.id} pkg={pkg} />
+            <PackageCard key={pkg.id} pkg={pkg} onBookNow={onBookNow} />
           ))}
         </div>
       </div>

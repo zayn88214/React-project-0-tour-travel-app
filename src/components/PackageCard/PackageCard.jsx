@@ -4,7 +4,8 @@ import './PackageCard.css';
 
 // PackageCard — receives a single package object via props
 // (props-drilled from App -> Packages -> PackageCard).
-function PackageCard({ pkg }) {
+// onBookNow callback opens the booking modal in App.
+function PackageCard({ pkg, onBookNow }) {
   const { image, title, duration, hotel, transport, meals, price } = pkg;
 
   return (
@@ -25,7 +26,12 @@ function PackageCard({ pkg }) {
 
         <div className="package-card__footer">
           <span className="package-card__price">{price}</span>
-          <button className="btn btn-outline">Book Now</button>
+          <button
+            className="btn btn-outline"
+            onClick={() => onBookNow && onBookNow(pkg)}
+          >
+            Book Now
+          </button>
         </div>
       </div>
     </article>

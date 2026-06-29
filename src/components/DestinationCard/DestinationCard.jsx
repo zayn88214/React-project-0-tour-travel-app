@@ -4,7 +4,8 @@ import './DestinationCard.css';
 
 // DestinationCard — receives a single destination object via props
 // (props-drilled from App -> Destinations -> DestinationCard).
-function DestinationCard({ destination }) {
+// onExplore callback opens the destination-detail modal in App.
+function DestinationCard({ destination, onExplore }) {
   const { image, city, country, description, rating, price } = destination;
 
   return (
@@ -23,7 +24,10 @@ function DestinationCard({ destination }) {
 
         <div className="destination-card__footer">
           <span className="destination-card__price">{price}</span>
-          <button className="destination-card__btn">
+          <button
+            className="destination-card__btn"
+            onClick={() => onExplore && onExplore(destination)}
+          >
             Explore <FaArrowRight />
           </button>
         </div>

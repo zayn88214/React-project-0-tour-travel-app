@@ -45,6 +45,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 74px; /* sticky navbar height offset */
 }
 
 body {

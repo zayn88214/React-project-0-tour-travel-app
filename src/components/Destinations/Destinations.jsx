@@ -2,7 +2,7 @@ import React from 'react';
 import DestinationCard from '../DestinationCard/DestinationCard.jsx';
 import './Destinations.css';
 
-function Destinations({ destinations }) {
+function Destinations({ destinations, onExplore }) {
   return (
     <section id="destinations" className="destinations">
       <div className="container">
@@ -14,7 +14,11 @@ function Destinations({ destinations }) {
 
         <div className="destinations__grid">
           {destinations.map((destination) => (
-            <DestinationCard key={destination.id} destination={destination} />
+            <DestinationCard
+              key={destination.id}
+              destination={destination}
+              onExplore={onExplore}
+            />
           ))}
         </div>
       </div>
