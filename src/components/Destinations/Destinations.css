@@ -1,0 +1,22 @@
+.destinations {
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.destinations__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 980px) {
+  .destinations__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .destinations__grid {
+    grid-template-columns: 1fr;
+  }
+}

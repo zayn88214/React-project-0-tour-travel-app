@@ -1,0 +1,82 @@
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(180deg, rgba(10, 30, 45, 0.55), rgba(10, 30, 45, 0.78)),
+    url('https://picsum.photos/seed/safarnama-hunza-hero/1600/1000')
+      center/cover no-repeat;
+  overflow: hidden;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(111, 183, 222, 0.18), transparent 55%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.hero__eyebrow {
+  color: var(--sky);
+}
+
+.hero__heading {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  margin-top: 0.6rem;
+  max-width: 640px;
+}
+
+.hero__text {
+  margin-top: 1.4rem;
+  max-width: 460px;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.2rem;
+}
+
+/* Signature element: a thin animated "horizon" line that suggests
+   a flight path / sea line, distinguishing the brand visually. */
+.hero__horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--sunset), var(--sky), transparent);
+  background-size: 200% 100%;
+  animation: horizonShift 8s linear infinite;
+}
+
+@keyframes horizonShift {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

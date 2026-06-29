@@ -1,0 +1,6 @@
+/* App-level styles are intentionally minimal — each section component
+   owns its own CSS file. This file only holds page-wide overrides. */
+
+#root {
+  overflow-x: hidden;
+}

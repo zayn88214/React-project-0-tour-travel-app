@@ -1,0 +1,60 @@
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.8rem 1.7rem;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lift);
+}
+
+.testimonial-card__quote-icon {
+  color: var(--sky);
+  font-size: 1.3rem;
+  opacity: 0.6;
+}
+
+.testimonial-card__review {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.testimonial-card__stars {
+  display: flex;
+  gap: 0.2rem;
+  margin-top: 1rem;
+  color: #ffc94a;
+  font-size: 0.85rem;
+}
+
+.testimonial-card__person {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--sand-dark);
+}
+
+.testimonial-card__person img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-card__name {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.testimonial-card__country {
+  font-size: 0.8rem;
+  color: #7c8c97;
+}
